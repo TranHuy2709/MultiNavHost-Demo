@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/homeChildFragment">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.test.multinavhostdemo.ui.home.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home" >
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_dashboard"
+        android:name="com.test.multinavhostdemo.ui.dashboard.DashboardFragment"
+        android:label="@string/title_dashboard"
+        tools:layout="@layout/fragment_dashboard" />
+
+    <fragment
+        android:id="@+id/navigation_notifications"
+        android:name="com.test.multinavhostdemo.ui.notifications.NotificationsFragment"
+        android:label="@string/title_notifications"
+        tools:layout="@layout/fragment_notifications" />
+    <fragment
+        android:id="@+id/homeChildFragment"
+        android:name="com.test.multinavhostdemo.ui.home.HomeChildFragment"
+        android:label="HomeChildFragment" >
+
+        <argument
+            android:name="number"
+            app:argType="integer" />
+    </fragment>
+
+    <action android:id="@+id/action_to_home_child"
+        app:destination="@id/homeChildFragment"/>
+</navigation>
